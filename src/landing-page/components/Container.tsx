@@ -1,0 +1,11 @@
+import styled from "styled-components";
+
+export const Container = styled.section`
+    margin: 0 auto;
+`
+
+export const Content = styled.div`
+    max-width: 144rem;
+    margin: 0 auto;
+    padding: var(--space-80)
+`
