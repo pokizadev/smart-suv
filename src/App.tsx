@@ -1,5 +1,9 @@
+import { TopNavigation } from "./landing-page/top-navigation/TopNavigation";
+
 const App = () => {
-    return <div>Smart Suv</div>;
+    return (
+        <TopNavigation/>
+    )
 };
 
 export { App };
