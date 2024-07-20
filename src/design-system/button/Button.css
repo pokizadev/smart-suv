@@ -6,8 +6,7 @@
 
 .btn-small {
     height: var(--space-28);
-    font-size: var(--font-size-16);
-    border-radius: var(--border-radius-133);
+    font-size: var(--font-size-14);
     padding-left: var(--space-12);
     padding-right: var(--space-12);
     border-radius: 0.6rem;
@@ -16,7 +15,6 @@
 .btn-medium {
     height: var(--space-56);
     font-size: var(--font-size-16);
-    border-radius: var(--border-radius-163);
     padding-right: var(--space-36);
     padding-left: var(--space-36);
 }
@@ -25,14 +23,12 @@
     height: var(--space-74);
     font-size: var(--font-size-20);
     font-weight: var(--font-weight-600);
-    border-radius: var(--border-radius-163);
     padding-right: var(--space-56);
     padding-left: var(--space-56);
 
     @media (max-width: 37.5em) {
         height: var(--space-56);
         font-size: var(--font-size-16);
-        border-radius: var(--border-radius-163);
         padding-right: var(--space-36);
         padding-left: var(--space-36);
     }
@@ -55,7 +51,7 @@
 
 .btn-gray {
     background-color: #ecf0f1;
-    color: var(--dark-brown);
+    color: var(--text-color);
 }
 
 .btn-white {

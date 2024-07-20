@@ -6,6 +6,8 @@ import { Button } from "../../design-system/button/Button";
 import english from "../../assets/icons/united-kingdom.png";
 import uzbek from "../../assets/icons/uzbekistan.png";
 import russian from "../../assets/icons/russia.png";
+import languageIcon from "../../assets/icons/internet.png";
+import { useState } from "react";
 
 export const links = [
     { text: "Home", link: "/" },
@@ -51,16 +53,47 @@ const Link = styled(NavLink)`
     }
 `;
 
+const ButtonsWrapper = styled.div`
+    display: flex;
+    gap: var(--space-16);
+`;
 
+const LanguageButton = styled(Button)`
+    width: 7rem;
+    position: relative;
+`;
 
 const LanguageIcon = styled.img`
     height: 1.7rem;
     width: 1.7rem;
-    margin-right: 1rem;
+    margin-right: 0.6rem;
     vertical-align: top;
 `;
 
+const ModalWrapper = styled.div`
+    width: 7rem;
+    position: absolute;
+    top: 94%;
+    right: 0;
+    background-color: #ecf0f1;
+    border-radius: 0.6rem;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+
+    padding-top: var(--space-12);
+    padding-bottom: var(--space-12);
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+    gap: 1rem;
+`;
+
 const TopNavigation = () => {
+    const [showLanguages, setShowLanguages] = useState(false);
+
+    const handleLanguageIconOnClick = () => {
+        setShowLanguages(!showLanguages);
+    };
     return (
         <Container>
             <NavigationContent>
@@ -79,10 +112,33 @@ const TopNavigation = () => {
                         );
                     })}
                 </NavigationLinks>
-                <Button size="sm" color="primary">
-                    <LanguageIcon src={english} />
-                    EN
-                </Button>
+                <ButtonsWrapper>
+                    <LanguageButton
+                        size="sm"
+                        color="gray"
+                        onClick={handleLanguageIconOnClick}
+                    >
+                        <LanguageIcon src={languageIcon} />
+                        EN
+                        {showLanguages && (
+                            <ModalWrapper>
+                                <Button size="sm" color="gray">
+                                    <LanguageIcon src={russian} />
+                                    RU
+                                </Button>
+
+                                <Button size="sm" color="gray">
+                                    <LanguageIcon src={uzbek} />
+                                    UZ
+                                </Button>
+
+                            </ModalWrapper>
+                        )}
+                    </LanguageButton>
+                    <Button size="sm" color="primary">
+                        Order Now
+                    </Button>
+                </ButtonsWrapper>
             </NavigationContent>
         </Container>
     );
