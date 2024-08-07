@@ -7,16 +7,17 @@
 .btn-small {
     height: var(--space-28);
     font-size: var(--font-size-14);
-    padding-left: var(--space-12);
-    padding-right: var(--space-12);
+    padding-left: var(--space-10);
+    padding-right: var(--space-10);
     border-radius: 0.6rem;
 }
 
 .btn-medium {
-    height: var(--space-56);
+    height: var(--space-48);
     font-size: var(--font-size-16);
     padding-right: var(--space-36);
     padding-left: var(--space-36);
+    border-radius: 1rem;
 }
 
 .btn-large {
@@ -50,7 +51,7 @@
 }
 
 .btn-gray {
-    background-color: #ecf0f1;
+    background-color: #f7f7f7;
     color: var(--text-color);
 }
 
