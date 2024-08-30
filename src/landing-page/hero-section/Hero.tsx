@@ -68,7 +68,7 @@ const HeroButton = styled(Button)`
     padding: 1rem 5rem;
     font-size: 2rem;
     font-weight: var(--font-weight-700);
-    color: #ff3131;
+    color: var(--white);
     background: linear-gradient(90deg, #30ccf7, #157bf7);
     background-clip: border-box;
     -webkit-background-clip: border-box;
