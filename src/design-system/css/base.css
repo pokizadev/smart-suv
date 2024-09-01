@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?hhtha:ital,wght@0,400..700;1,400..700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&display=swap');
 
 *,
 *::before,
@@ -13,7 +13,7 @@ html {
 }
 
 body {
-    font-family: "Lora", serif;
+    font-family: "Bitter", serif;
 }
 
 a {
@@ -23,4 +23,3 @@ a {
 li {
     list-style-type: none;
 }
-
