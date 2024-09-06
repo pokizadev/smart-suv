@@ -7,7 +7,7 @@ const CompanyContent = styled(Content)`
     display: flex;
 `;
 
-const CompanySectionLeft = styled.div`
+const CompanySectionRight = styled.div`
     width: 50%;
     padding: var(--space-60);
 `;
@@ -16,7 +16,7 @@ const CompanySectionImage = styled.img`
     border-radius: 5rem;
     filter: brightness(1.2);
 `;
-const CompanySectionRight = styled.div`
+const CompanySectionLeft = styled.div`
     width: 50%;
     padding: var(--space-60);
     display: flex;
@@ -97,9 +97,6 @@ const Company = () => {
         <Container>
             <CompanyContent>
                 <CompanySectionLeft>
-                    <CompanySectionImage src={CompanyImg} />
-                </CompanySectionLeft>
-                <CompanySectionRight>
                     <CompanySectionTitle>Our Company</CompanySectionTitle>
                     <CompanySectionText>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -111,6 +108,9 @@ const Company = () => {
                     <ButtonWrapper>
                         <CompanyButton>More about us</CompanyButton>
                     </ButtonWrapper>
+                </CompanySectionLeft>
+                <CompanySectionRight>
+                    <CompanySectionImage src={CompanyImg} />
                 </CompanySectionRight>
             </CompanyContent>
         </Container>

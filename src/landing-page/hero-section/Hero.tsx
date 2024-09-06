@@ -36,9 +36,8 @@ const HeroText = styled.div`
 `;
 
 const Span = styled.span`
-    font-weight: var(--font-weight-600);
-    font-size: var(--font-size-56);
-    letter-spacing: 0.3rem;
+    font-weight: 600;
+    font-size: var(--font-size-48);
     line-height: 1.5;
     background: linear-gradient(90deg, #00c6ff, #0072ff);
     background-clip: initial;
@@ -50,9 +49,8 @@ const Span = styled.span`
 `;
 
 const Title = styled.h1`
-    font-weight: var(--font-weight-700);
-    font-size: 12rem;
-    letter-spacing: 0.5rem;
+    font-weight: 700;
+    font-size: 10rem;
 
     background: linear-gradient(90deg, #00c6ff, #0072ff);
     background-clip: initial;
@@ -78,7 +76,7 @@ const HeroButton = styled(Button)`
     text-decoration: none;
     outline: none;
     transition: background-color 0.3s, color 0.3s;
-    width: 50%;
+    width: 40%;
     background-color: transparent;
     border-radius: 1rem;
 
@@ -115,7 +113,7 @@ const HeroButton = styled(Button)`
     }
 `;
 
-const ButtonsWrapper = styled.div`
+const ButtonWrapper = styled.div`
     display: flex;
     gap: var(--space-72);
 `;
@@ -129,12 +127,12 @@ const Hero = () => {
                         <Span>Stay Hydrated with</Span>
                         <Title>Smart Water</Title>
                     </HeroText>
-                    <ButtonsWrapper>
+                    <ButtonWrapper>
                         
                         <HeroButton>
                         Order Now
                     </HeroButton>
-                    </ButtonsWrapper>
+                    </ButtonWrapper>
                 </HeroLeft>
             </HeroContent>
         </HeroContainer>
