@@ -68,10 +68,10 @@ const Link = styled(NavLink)`
     }
 `;
 
-const ButtonsWrapper = styled.div`
-    display: flex;
-    gap: var(--space-16);
-`;
+// const ButtonsWrapper = styled.div`
+//     display: flex;
+//     gap: var(--space-16);
+// `;
 
 const LanguageButton = styled.div`
     width: 7rem;
