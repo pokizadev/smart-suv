@@ -7,7 +7,23 @@ import ChevronLeft from "../../assets/icons/chevron-left (2).png";
 import Product1 from "../../assets/product20 (1).png";
 import Product2 from "../../assets/product10l.png";
 
-
+const productData = [
+    {
+        image: ProductsImage,
+        description:
+            "We offer a variety of bottled water products designed to meet your hydration needs, whether at home, at work, or on the go. Enjoy the freshness and quality of our water in every bottle."
+    },
+    {
+        image: Product1,
+        description:
+            "Our 20L bottle is ideal for families and offices, providing long-lasting hydration with ease and convenience."
+    },
+    {
+        image: Product2,
+        description:
+            "Our 10L bottle is perfect for smaller households or gatherings, offering portability and freshness in every sip."
+    }
+];
 
 const ProductsContent = styled(Content)`
     display: flex;
@@ -34,7 +50,12 @@ const IconWrapper = styled.div`
     justify-content: space-between;
 `;
 
-
+const ChevronIcon = styled.img<{ disabled?: boolean }>`
+    width: ${(props) => (props.disabled ? "0" : "4rem")};
+    height: ${(props) => (props.disabled ? "0" : "4rem")};
+    cursor: ${(props) => (props.disabled ? "not-allowed" : "pointer")};
+    opacity: ${(props) => (props.disabled ? 0.5 : 1)};
+`;
 
 const ProductsSectionTitle = styled.h2`
     font-size: var(--font-size-64);
@@ -62,13 +83,25 @@ const ProductsSectionImage = styled.img`
 `;
 
 const Products = () => {
-   
+    const [activeProductIndex, setActiveProductIndex] = useState(0);
+
+    const handleNextProduct = () => {
+        if (activeProductIndex < productData.length - 1) {
+            setActiveProductIndex(activeProductIndex + 1);
+        }
+    };
+
+    const handlePrevProduct = () => {
+        if (activeProductIndex > 0) {
+            setActiveProductIndex(activeProductIndex - 1);
+        }
+    };
     return (
         <Container>
             <ProductsContent>
                 <ProductsSectionLeft>
                     <ProductsSectionImage
-                        src={ProductsImage}
+                        src={productData[activeProductIndex].image}
                     />
                 </ProductsSectionLeft>
                 <ProductsSectionRight>
@@ -77,11 +110,22 @@ const Products = () => {
                             Our Products
                         </ProductsSectionTitle>
                         <ProductsSectionText>
-                        We offer a variety of bottled water products designed to meet your hydration needs, whether at home, at work, or on the go. Enjoy the freshness and quality of our water in every bottle.
+                            {productData[activeProductIndex].description}
                         </ProductsSectionText>
                     </RightContent>
                 </ProductsSectionRight>
-                
+                <IconWrapper>
+                    <ChevronIcon
+                        src={ChevronLeft}
+                        onClick={handlePrevProduct}
+                        disabled={activeProductIndex === 0}
+                    />
+                    <ChevronIcon
+                        src={ChevronRight}
+                        onClick={handleNextProduct}
+                        disabled={activeProductIndex === productData.length - 1}
+                    />
+                </IconWrapper>
             </ProductsContent>
         </Container>
     );
